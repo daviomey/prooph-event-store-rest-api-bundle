@@ -1,0 +1,13 @@
+{
+    "name": "ibanawx/prooph-event-store-rest-api-bundle",
+    "description": "Make Prooph Event Store streams accessible over a REST API.",
+    "type": "symfony-bundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "David Twomey",
+            "email": "ibanawx@gmail.com"
+        }
+    ],
+    "require": {}
+}
