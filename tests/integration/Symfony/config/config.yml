@@ -1,6 +1,20 @@
+imports:
+  - { resource: services.yml }
+
 framework:
   test: ~
   secret: 'Required by the FrameworkBundle'
   router:
     resource: "%kernel.root_dir%/config/routing.yml"
     strict_requirements: ~
+
+prooph_event_store:
+  stores:
+    default:
+      adapter: test.prooph_event_store.in_memory_adapter
+
+prooph_event_store_rest_api:
+  event_store:
+    name: default
+  formatters:
+    event: prooph_event_store_rest_api.json_stream_event_formatter

@@ -15,7 +15,9 @@
         "prooph/event-store": "^6.5",
         "symfony/http-foundation": "^3.1",
         "symfony/config": "^3.1",
-        "symfony/dependency-injection": "^3.1"
+        "symfony/dependency-injection": "^3.1",
+        "symfony/http-kernel": "^3.1",
+        "prooph/event-store-symfony-bundle": "^0.2.2"
     },
     "autoload": {
         "psr-4": {

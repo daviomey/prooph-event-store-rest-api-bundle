@@ -1,0 +1,4 @@
+services:
+
+  test.prooph_event_store.in_memory_adapter:
+    class: Ibanawx\Bundle\Prooph\EventStore\RestApiBundle\Tests\Integration\Fixture\InMemoryAdapter

@@ -1,6 +1,8 @@
 <?php
 namespace Ibanawx\Bundle\Prooph\EventStore\RestApiBundle\Tests\Integration;
 
+use Ibanawx\Bundle\Prooph\EventStore\RestApiBundle\Controller\StreamEventsController;
+use Ibanawx\Bundle\Prooph\EventStore\RestApiBundle\Controller\StreamsController;
 use Ibanawx\Bundle\Prooph\EventStore\RestApiBundle\Formatter\JsonStreamEventFormatter;
 use Ibanawx\Bundle\Prooph\EventStore\RestApiBundle\Formatter\JsonStreamFormatter;
 use Ibanawx\Bundle\Prooph\EventStore\RestApiBundle\Pagination\StreamPaginator;
@@ -53,6 +55,24 @@ class ContainerTest extends IntegrationTest
     {
         $service = $this->container->get('prooph_event_store_rest_api.json_stream_formatter');
         $this->assertInstanceOf(JsonStreamFormatter::class, $service);
+    }
+
+    /**
+     * @test
+     */
+    public function it_should_return_the_stream_events_controller_service()
+    {
+        $service = $this->container->get('prooph_event_store_rest_api.stream_events_controller');
+        $this->assertInstanceOf(StreamEventsController::class, $service);
+    }
+
+    /**
+     * @test
+     */
+    public function it_should_return_the_streams_controller_service()
+    {
+        $service = $this->container->get('prooph_event_store_rest_api.streams_controller');
+        $this->assertInstanceOf(StreamsController::class, $service);
     }
 
 }
