@@ -1,0 +1,4 @@
+services:
+
+  stub_event_store_adapter:
+    class: Ibanawx\Bundle\Prooph\EventStore\RestApiBundle\Tests\Functional\Fixture\StubAdapter

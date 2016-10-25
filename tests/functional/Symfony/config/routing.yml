@@ -1,0 +1,2 @@
+test:
+  resource: '@ProophEventStoreRestApiBundle/Resources/config/routing.yml'

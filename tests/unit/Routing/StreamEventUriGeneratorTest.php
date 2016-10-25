@@ -36,7 +36,7 @@ class StreamEventUriGeneratorTest extends UnitTest
         $streamName = $this->faker->word;
         $version = $this->faker->numberBetween();
         $routeParams = [
-            'name' => $streamName,
+            'streamName' => $streamName,
             'version' => $version
         ];
         $event = $this->mock(Message::class);

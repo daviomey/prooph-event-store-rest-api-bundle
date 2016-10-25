@@ -26,7 +26,7 @@ class StreamEventUriGenerator
     public function get($streamName, Message $event)
     {
         $routeParams = [
-            'name' => $streamName,
+            'streamName' => $streamName,
             'version' => $event->version()
         ];
         

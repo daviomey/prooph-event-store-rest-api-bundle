@@ -2,3 +2,5 @@
 /vendor
 /tests/integration/Symfony/cache
 /tests/integration/Symfony/logs
+/tests/functional/Symfony/cache
+/tests/functional/Symfony/logs
