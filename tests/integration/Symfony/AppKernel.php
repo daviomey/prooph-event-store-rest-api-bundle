@@ -1,7 +1,6 @@
 <?php
 namespace Ibanawx\Bundle\Prooph\EventStore\RestApiBundle\Tests\Integration\Symfony;
 
-use Prooph\Bundle\EventStore\ProophEventStoreBundle;
 use Symfony\Component\HttpKernel\Kernel;
 use Symfony\Component\Config\Loader\LoaderInterface;
 
