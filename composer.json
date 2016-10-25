@@ -13,7 +13,9 @@
         "symfony/framework-bundle": "^3.1",
         "prooph/common": "^3.7",
         "prooph/event-store": "^6.5",
-        "symfony/http-foundation": "^3.1"
+        "symfony/http-foundation": "^3.1",
+        "symfony/config": "^3.1",
+        "symfony/dependency-injection": "^3.1"
     },
     "autoload": {
         "psr-4": {
@@ -27,7 +29,8 @@
     "autoload-dev": {
         "psr-4": {
             "Ibanawx\\Bundle\\Prooph\\EventStore\\RestApiBundle\\Tests\\": "tests/",
-            "Ibanawx\\Bundle\\Prooph\\EventStore\\RestApiBundle\\Tests\\Unit\\": "tests/unit/"
+            "Ibanawx\\Bundle\\Prooph\\EventStore\\RestApiBundle\\Tests\\Unit\\": "tests/unit/",
+            "Ibanawx\\Bundle\\Prooph\\EventStore\\RestApiBundle\\Tests\\Integration\\": "tests/integration/"
         }
     }
 }

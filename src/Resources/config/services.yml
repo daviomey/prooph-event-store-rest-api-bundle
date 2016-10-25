@@ -1,0 +1,11 @@
+services:
+
+  prooph_event_store_rest_api.stream_event_uri_generator:
+    class: Ibanawx\Bundle\Prooph\EventStore\RestApiBundle\Routing\StreamEventUriGenerator
+    arguments:
+      - '@router'
+
+  prooph_event_store_rest_api.stream_uri_generator:
+      class: Ibanawx\Bundle\Prooph\EventStore\RestApiBundle\Routing\StreamUriGenerator
+      arguments:
+        - '@router'
