@@ -1,6 +1,7 @@
 <?php
 namespace Ibanawx\Bundle\Prooph\EventStore\RestApiBundle\Tests\Integration;
 
+use Ibanawx\Bundle\Prooph\EventStore\RestApiBundle\Pagination\StreamPaginator;
 use Ibanawx\Bundle\Prooph\EventStore\RestApiBundle\Routing\StreamEventUriGenerator;
 use Ibanawx\Bundle\Prooph\EventStore\RestApiBundle\Routing\StreamUriGenerator;
 
@@ -23,6 +24,15 @@ class ContainerTest extends IntegrationTest
     {
         $service = $this->container->get('prooph_event_store_rest_api.stream_uri_generator');
         $this->assertInstanceOf(StreamUriGenerator::class, $service);
+    }
+
+    /**
+     * @test
+     */
+    public function it_should_return_the_stream_paginator_service()
+    {
+        $service = $this->container->get('prooph_event_store_rest_api.stream_paginator');
+        $this->assertInstanceOf(StreamPaginator::class, $service);
     }
 
 }

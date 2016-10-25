@@ -9,3 +9,8 @@ services:
       class: Ibanawx\Bundle\Prooph\EventStore\RestApiBundle\Routing\StreamUriGenerator
       arguments:
         - '@router'
+
+  prooph_event_store_rest_api.stream_paginator:
+    class: Ibanawx\Bundle\Prooph\EventStore\RestApiBundle\Pagination\StreamPaginator
+    arguments:
+      - '@prooph_event_store_rest_api.stream_uri_generator'
