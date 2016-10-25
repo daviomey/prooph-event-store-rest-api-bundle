@@ -2,6 +2,8 @@ prooph_event_store_get_event:
   methods: [GET]
   path: /streams/{streamName}/events/{version}
   defaults: {_controller: prooph_event_store_rest_api.stream_events_controller:getAction}
+  requirements:
+    version: '[0-9]+'
 
 prooph_event_store_get_stream:
   methods: [GET]
