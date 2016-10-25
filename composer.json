@@ -12,7 +12,8 @@
     "require": {
         "symfony/framework-bundle": "^3.1",
         "prooph/common": "^3.7",
-        "prooph/event-store": "^6.5"
+        "prooph/event-store": "^6.5",
+        "symfony/http-foundation": "^3.1"
     },
     "autoload": {
         "psr-4": {

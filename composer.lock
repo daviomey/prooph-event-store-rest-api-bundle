@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "452542afb426835c299f42b6432816ef",
-    "content-hash": "e80b6c8ac7a3a9fcdc59ac8f0a01389c",
+    "hash": "04c9aa053c98d3e65c4cfc374433d68c",
+    "content-hash": "c2607cf9460a2d239e4e3dbaca68002c",
     "packages": [
         {
             "name": "beberlei/assert",
