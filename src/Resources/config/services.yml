@@ -14,3 +14,15 @@ services:
     class: Ibanawx\Bundle\Prooph\EventStore\RestApiBundle\Pagination\StreamPaginator
     arguments:
       - '@prooph_event_store_rest_api.stream_uri_generator'
+
+  prooph_event_store_rest_api.json_stream_event_formatter:
+    class: Ibanawx\Bundle\Prooph\EventStore\RestApiBundle\Formatter\JsonStreamEventFormatter
+    arguments:
+      - '@prooph_event_store_rest_api.stream_event_uri_generator'
+
+  prooph_event_store_rest_api.json_stream_formatter:
+    class: Ibanawx\Bundle\Prooph\EventStore\RestApiBundle\Formatter\JsonStreamFormatter
+    arguments:
+      - '@prooph_event_store_rest_api.stream_uri_generator'
+      - '@prooph_event_store_rest_api.stream_paginator'
+      - '@prooph_event_store_rest_api.json_stream_event_formatter'
