@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "b41ffc0578bd8625ebde6cd6760093da",
-    "content-hash": "a51e5ff491dda7ae563b438094ed606e",
+    "hash": "452542afb426835c299f42b6432816ef",
+    "content-hash": "e80b6c8ac7a3a9fcdc59ac8f0a01389c",
     "packages": [
         {
             "name": "beberlei/assert",
@@ -354,6 +354,82 @@
                 "prooph"
             ],
             "time": "2016-05-14 06:40:38"
+        },
+        {
+            "name": "prooph/event-store",
+            "version": "v6.5.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/prooph/event-store.git",
+                "reference": "edf0f6f4553196294459258ab0e5aa681f00ce0a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/prooph/event-store/zipball/edf0f6f4553196294459258ab0e5aa681f00ce0a",
+                "reference": "edf0f6f4553196294459258ab0e5aa681f00ce0a",
+                "shasum": ""
+            },
+            "require": {
+                "beberlei/assert": "~2.3",
+                "php": "~5.5|~7.0",
+                "prooph/common": "~3.7"
+            },
+            "conflict": {
+                "sandrokeil/interop-config": "<1.0"
+            },
+            "require-dev": {
+                "container-interop/container-interop": "^1.1",
+                "friendsofphp/php-cs-fixer": "^1.12.0",
+                "malukenho/docheader": "^0.1.3",
+                "phpunit/phpunit": "~4.8",
+                "ramsey/uuid": "~2.8",
+                "sandrokeil/interop-config": "^1.0",
+                "satooshi/php-coveralls": "^1.0",
+                "tobiju/bookdown-bootswatch-templates": "^1.0",
+                "zendframework/zend-servicemanager": "~2.6"
+            },
+            "suggest": {
+                "container-interop/container-interop": "For usage of provided factories",
+                "prooph/event-sourcing": "Basic functionality for event sourced aggregates",
+                "prooph/event-store-doctrine-adapter": "For usage with doctrine dbal as event store adapter",
+                "prooph/event-store-flywheel-adapter": "For usage with flywheel as event store adapter",
+                "prooph/event-store-mongodb-adapter": "For usage with mongodb as event store adapter",
+                "prooph/service-bus": "Message bus facade to connect the event store with messaging systems",
+                "prooph/snapshot-doctrine-adapter": "For usage with doctrine dbal as snapshot adapter",
+                "prooph/snapshot-memcached-adapter": "For usage with memcached as snapshot adapter",
+                "prooph/snapshot-mongodb-adapter": "For usage with mongodb as snapshot adapter",
+                "sandrokeil/interop-config": "For usage of provided factories"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Prooph\\EventStore\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Sascha-Oliver Prolic",
+                    "email": "saschaprolic@googlemail.com"
+                },
+                {
+                    "name": "Alexander Miertsch",
+                    "email": "contact@prooph.de",
+                    "homepage": "http://www.prooph.de"
+                }
+            ],
+            "description": "PHP EventStore Implementation",
+            "homepage": "http://getprooph.org/",
+            "keywords": [
+                "EventSourcing",
+                "EventStore",
+                "ddd",
+                "prooph"
+            ],
+            "time": "2016-09-14 05:27:51"
         },
         {
             "name": "psr/cache",
