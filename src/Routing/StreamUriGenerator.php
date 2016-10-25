@@ -25,7 +25,7 @@ class StreamUriGenerator
     public function get($streamName, $minVersion = 0)
     {
         $routeParams = [
-            'name' => $streamName,
+            'streamName' => $streamName,
             'minVersion' => $minVersion
         ];
 

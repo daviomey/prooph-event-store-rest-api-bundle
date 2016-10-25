@@ -35,7 +35,7 @@ class StreamUriGeneratorTest extends UnitTest
         $streamName = $this->faker->word;
         $minVersion = $this->faker->numberBetween();
         $routeParams = [
-            'name' => $streamName,
+            'streamName' => $streamName,
             'minVersion' => $minVersion
         ];
         $url = $this->faker->url;
