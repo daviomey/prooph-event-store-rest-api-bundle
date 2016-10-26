@@ -35,14 +35,14 @@ class JsonStreamFormatter implements StreamFormatter
         return 'application/json';
     }
 
-    public function format(Stream $stream)
+    public function format(Stream $stream, $minVersion = 0)
     {
         $streamName = (string) $stream->streamName();
         $links = $this->generateLinks($stream);
         $entries = $this->generateEntries($stream);
 
         return json_encode([
-            'id' => $this->uriGenerator->get($streamName),
+            'id' => $this->uriGenerator->get($streamName, $minVersion),
             'title' => $streamName . ' stream',
             'updated' => null,
             'links' => $links,

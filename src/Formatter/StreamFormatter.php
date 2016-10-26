@@ -8,9 +8,10 @@ interface StreamFormatter extends Formatter
 
     /**
      * @param Stream $stream
+     * @param int $minVersion
      *
      * @return string
      */
-    public function format(Stream $stream);
+    public function format(Stream $stream, $minVersion = 0);
 
 }

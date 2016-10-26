@@ -54,10 +54,11 @@ class JsonStreamFormatterTest extends UnitTest
             $this->generateEvent()
         ];
         $stream = new Stream(new StreamName($streamName), new \ArrayIterator($events));
+        $minVersion = $this->faker->numberBetween();
         $this->uriGenerator
             ->method('get')
-            ->with($streamName)
-            ->willReturn($this->generateStreamUri($stream));
+            ->with($streamName, $minVersion)
+            ->willReturn($this->generateStreamUri($stream, $minVersion));
         $this->paginator
             ->method('next')
             ->with($stream)
@@ -73,8 +74,8 @@ class JsonStreamFormatterTest extends UnitTest
                 $this->eventToJson($events[1])
             );
 
-        $json = $this->streamToJson($stream);
-        $this->assertJsonStringEqualsJsonString($json, $this->SUT->format($stream));
+        $json = $this->streamToJson($stream, $minVersion);
+        $this->assertJsonStringEqualsJsonString($json, $this->SUT->format($stream, $minVersion));
     }
 
     /**
@@ -88,17 +89,18 @@ class JsonStreamFormatterTest extends UnitTest
             ->method('get')
             ->with($streamName)
             ->willReturn($this->generateStreamUri($stream));
-        
+
         $json = $this->streamToJson($stream);
         $this->assertJsonStringEqualsJsonString($json, $this->SUT->format($stream));
     }
 
     /**
      * @param Stream $stream
+     * @param int $minVersion
      *
      * @return string
      */
-    private function streamToJson(Stream $stream)
+    private function streamToJson(Stream $stream, $minVersion = 0)
     {
         $streamName = (string) $stream->streamName();
         $entries = [];
@@ -115,7 +117,7 @@ class JsonStreamFormatterTest extends UnitTest
         }
 
         return json_encode([
-            'id' => $this->generateStreamUri($stream),
+            'id' => $this->generateStreamUri($stream, $minVersion),
             'title' => $streamName . ' stream',
             'updated' => null,
             'links' => $links,
