@@ -78,6 +78,22 @@ class JsonStreamFormatterTest extends UnitTest
     }
 
     /**
+     * @test
+     */
+    public function it_should_not_contain_a_next_link_because_the_stream_has_no_events()
+    {
+        $streamName = $this->faker->word;
+        $stream = new Stream(new StreamName($streamName), new \ArrayIterator());
+        $this->uriGenerator
+            ->method('get')
+            ->with($streamName)
+            ->willReturn($this->generateStreamUri($stream));
+        
+        $json = $this->streamToJson($stream);
+        $this->assertJsonStringEqualsJsonString($json, $this->SUT->format($stream));
+    }
+
+    /**
      * @param Stream $stream
      *
      * @return string
@@ -90,16 +106,19 @@ class JsonStreamFormatterTest extends UnitTest
             $entries[] = json_decode($this->eventToJson($event), true);
         }
 
+        $links = [];
+        if (!empty($entries)) {
+            $links[] = [
+                'uri' => '',
+                'relation' => 'next'
+            ];
+        }
+
         return json_encode([
             'id' => $this->generateStreamUri($stream),
             'title' => $streamName . ' stream',
             'updated' => null,
-            'links' => [
-                [
-                    'uri' => '',
-                    'relation' => 'next'
-                ]
-            ],
+            'links' => $links,
             'entries' => $entries
         ]);
     }

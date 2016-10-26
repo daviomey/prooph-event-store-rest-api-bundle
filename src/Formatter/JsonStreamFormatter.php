@@ -57,12 +57,16 @@ class JsonStreamFormatter implements StreamFormatter
      */
     private function generateLinks(Stream $stream)
     {
-        return [
-            [
+        $links = [];
+
+        if (iterator_count($stream->streamEvents())) {
+            $links[] = [
                 'uri' => $this->paginator->next($stream),
                 'relation' => 'next'
-            ]
-        ];
+            ];
+        }
+
+        return $links;
     }
 
     /**
